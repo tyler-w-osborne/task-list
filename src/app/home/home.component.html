@@ -11,8 +11,11 @@
     "
   >
     Cleaning List
-    <div style="color: seagreen; cursor: pointer;font-size: 32px;" (click)="add_entry_dialog.showModal()">
-      +
+    <div style="display: flex;align-items: center;justify-content: space-between;">
+    <!-- <button mat-icon-button [cdkCopyToClipboard]="copy_string"><mat-icon>content_copy</mat-icon></button> -->
+    <button mat-icon-button style="color: seagreen;" (click)="add_entry_dialog.showModal()">
+        <mat-icon>add</mat-icon>
+    </button>
     </div>
   </div>
   <div class="list">
