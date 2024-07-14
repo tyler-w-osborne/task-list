@@ -1,0 +1,51 @@
+.cleaning-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.list {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: cadetblue;
+    gap: .5rem;
+    padding: .5rem;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.entry {
+    background-color: white;
+    color: black;
+    padding: .75rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: .5rem;
+}
+
+.entry > .index {
+    background-color: crimson;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    text-align: center;
+}
+
+.entry > .text {
+    color: black;
+}
+
+.entry > .remove {
+    width: 16px;
+    height: 16px;
+    background-color: crimson;
+    cursor: pointer;
+}

@@ -1,0 +1,36 @@
+<div class="cleaning-list">
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0px .5rem;
+      background-color: coral;
+    "
+  >
+    Cleaning List
+    <div style="color: seagreen; cursor: pointer;font-size: 32px;" (click)="add_entry_dialog.showModal()">
+      +
+    </div>
+  </div>
+  <div class="list">
+  @for (entry of cleaning_list; track $index) {
+  <div class="entry" (click)="Selected.Entry = entry">
+    <div class="index">{{ $index + 1 }}</div>
+    <div class="text">{{ entry }}</div>
+    @if (Selected.Entry === entry) {
+    <div class="remove" (click)="Selected.Delete(entry)"></div>
+    }
+  </div>
+}
+</div>
+</div>
+<dialog #add_entry_dialog>
+  <input type="text" [(ngModel)]="Selected.Entry" (keyup.enter)="Selected.Add();add_entry_dialog.close()">
+  <div style="display: flex;align-items: center;justify-content: space-between;">
+    <button (click)="add_entry_dialog.close()">Cancel</button>
+    <button (click)="Selected.Add();add_entry_dialog.close()">Add Entry</button>
+</div>
+</dialog>
